@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4E2C5AE81ACF2920007B9736 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AE71ACF2920007B9736 /* main.m */; };
 		4E2C5AEB1ACF2920007B9736 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AEA1ACF2920007B9736 /* AppDelegate.m */; };
-		4E2C5AEE1ACF2920007B9736 /* HeaderWebView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AEC1ACF2920007B9736 /* HeaderWebView.xcdatamodeld */; };
 		4E2C5AF11ACF2920007B9736 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AF01ACF2920007B9736 /* ViewController.m */; };
 		4E2C5AF41ACF2920007B9736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C5AF21ACF2920007B9736 /* Main.storyboard */; };
 		4E2C5AF61ACF2920007B9736 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C5AF51ACF2920007B9736 /* Images.xcassets */; };
@@ -34,7 +33,6 @@
 		4E2C5AE71ACF2920007B9736 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E2C5AE91ACF2920007B9736 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E2C5AEA1ACF2920007B9736 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4E2C5AED1ACF2920007B9736 /* HeaderWebView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeaderWebView.xcdatamodel; sourceTree = "<group>"; };
 		4E2C5AEF1ACF2920007B9736 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4E2C5AF01ACF2920007B9736 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4E2C5AF31ACF2920007B9736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				4E2C5AF21ACF2920007B9736 /* Main.storyboard */,
 				4E2C5AF51ACF2920007B9736 /* Images.xcassets */,
 				4E2C5AF71ACF2920007B9736 /* LaunchScreen.xib */,
-				4E2C5AEC1ACF2920007B9736 /* HeaderWebView.xcdatamodeld */,
 				4E2C5AE51ACF2920007B9736 /* Supporting Files */,
 				4E2C5B0E1ACF294B007B9736 /* HeaderWebView.h */,
 				4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */,
@@ -228,7 +225,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E2C5AEB1ACF2920007B9736 /* AppDelegate.m in Sources */,
-				4E2C5AEE1ACF2920007B9736 /* HeaderWebView.xcdatamodeld in Sources */,
 				4E2C5AF11ACF2920007B9736 /* ViewController.m in Sources */,
 				4E2C5B101ACF294B007B9736 /* HeaderWebView.m in Sources */,
 				4E2C5AE81ACF2920007B9736 /* main.m in Sources */,
@@ -434,19 +430,6 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		4E2C5AEC1ACF2920007B9736 /* HeaderWebView.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				4E2C5AED1ACF2920007B9736 /* HeaderWebView.xcdatamodel */,
-			);
-			currentVersion = 4E2C5AED1ACF2920007B9736 /* HeaderWebView.xcdatamodel */;
-			path = HeaderWebView.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 4E2C5ADA1ACF2920007B9736 /* Project object */;
 }

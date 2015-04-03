@@ -11,7 +11,6 @@
 @interface HeaderWebView()
 
 @property (nonatomic, weak) UIView *innerHeaderView;
-
 @property (nonatomic, weak) IBOutlet UIView *headerView;
 
 @end
@@ -27,32 +26,28 @@
     
     self.scalesPageToFit = YES;
     
-    [self.scrollView setDelegate:self];
-    
     [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionInitial context:nil];
 }
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     NSLog(@"%@", NSStringFromCGRect([self convertRect:self.innerHeaderView.frame toView:self.scrollView]));
     
     CGRect newFrame = self.headerView.frame;
     newFrame.origin.y = -CGRectGetMinY([self convertRect:self.innerHeaderView.frame toView:self.scrollView]);
     [self.headerView setFrame:newFrame];
+    
+    [self.fullScreenDelegate headerWebView:self showFullScreen:(self.scrollView.contentOffset.y > 0)];
 }
 
 - (void)createHeaderView {
     
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 10)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 0)];
     [headerView setBackgroundColor:[UIColor redColor]];
     
     [self.scrollView addSubview:headerView];
-    
-    UIView *headerView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 100)];
-    [headerView2 setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.5]];
+    [self setInnerHeaderView:headerView];
     
     [self addSubview:self.headerView];
-    
-    [self setInnerHeaderView:headerView];
     
     for (UIView *subview in self.scrollView.subviews) {
         CGRect newFrame = subview.frame;
@@ -62,13 +57,10 @@
         
         newFrame.origin.y += CGRectGetHeight(self.headerView.frame);
         [subview setFrame:newFrame];
-        NSLog(@"Subview %@", subview);
     }
-    
-    
 }
 
--(void)dealloc {
+- (void)dealloc {
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
 

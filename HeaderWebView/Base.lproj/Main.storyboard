@@ -72,6 +72,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="UI0-Cg-JKD"/>
+                    <connections>
+                        <outlet property="webView" destination="gFe-Ap-c90" id="HEZ-aM-9to"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

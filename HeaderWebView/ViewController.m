@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "HeaderWebView.h"
 
-@interface ViewController ()
+@interface ViewController () <HeaderWebViewDelegate>
+
+@property (nonatomic, weak) IBOutlet HeaderWebView *webView;
 
 @end
 
@@ -16,12 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    // Set the delegate for the full screen behavior
+    [self.webView setFullScreenDelegate:self];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)headerWebView:(HeaderWebView *)webview showFullScreen:(BOOL)fullScreen {
+    
+    [self.navigationController setNavigationBarHidden:fullScreen animated:YES];
+    
+    // Hide the status bar too
 }
 
 @end

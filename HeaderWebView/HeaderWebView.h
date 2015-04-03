@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class HeaderWebView;
+
+@protocol HeaderWebViewDelegate
+
+- (void)headerWebView:(HeaderWebView *)webview showFullScreen:(BOOL)fullScreen;
+
+@end
+
 @interface HeaderWebView : UIWebView
+
+@property (nonatomic, weak) id<HeaderWebViewDelegate> fullScreenDelegate;
 
 @end
