@@ -15,16 +15,6 @@
 		4E2C5B101ACF294B007B9736 /* HeaderWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4E2C5AFF1ACF2920007B9736 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4E2C5ADA1ACF2920007B9736 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E2C5AE11ACF2920007B9736;
-			remoteInfo = HeaderWebView;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		4E2C5AE21ACF2920007B9736 /* HeaderWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeaderWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2C5AE61ACF2920007B9736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -35,20 +25,12 @@
 		4E2C5AF01ACF2920007B9736 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4E2C5AF31ACF2920007B9736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E2C5AF81ACF2920007B9736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4E2C5AFE1ACF2920007B9736 /* HeaderWebViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeaderWebViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2C5B0E1ACF294B007B9736 /* HeaderWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderWebView.h; sourceTree = "<group>"; };
 		4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4E2C5ADF1ACF2920007B9736 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E2C5AFB1ACF2920007B9736 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -70,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				4E2C5AE21ACF2920007B9736 /* HeaderWebView.app */,
-				4E2C5AFE1ACF2920007B9736 /* HeaderWebViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,24 +101,6 @@
 			productReference = 4E2C5AE21ACF2920007B9736 /* HeaderWebView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4E2C5AFD1ACF2920007B9736 /* HeaderWebViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4E2C5B0B1ACF2920007B9736 /* Build configuration list for PBXNativeTarget "HeaderWebViewTests" */;
-			buildPhases = (
-				4E2C5AFA1ACF2920007B9736 /* Sources */,
-				4E2C5AFB1ACF2920007B9736 /* Frameworks */,
-				4E2C5AFC1ACF2920007B9736 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4E2C5B001ACF2920007B9736 /* PBXTargetDependency */,
-			);
-			name = HeaderWebViewTests;
-			productName = HeaderWebViewTests;
-			productReference = 4E2C5AFE1ACF2920007B9736 /* HeaderWebViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,10 +112,6 @@
 				TargetAttributes = {
 					4E2C5AE11ACF2920007B9736 = {
 						CreatedOnToolsVersion = 6.2;
-					};
-					4E2C5AFD1ACF2920007B9736 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 4E2C5AE11ACF2920007B9736;
 					};
 				};
 			};
@@ -170,7 +129,6 @@
 			projectRoot = "";
 			targets = (
 				4E2C5AE11ACF2920007B9736 /* HeaderWebView */,
-				4E2C5AFD1ACF2920007B9736 /* HeaderWebViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -182,13 +140,6 @@
 			files = (
 				4E2C5AF41ACF2920007B9736 /* Main.storyboard in Resources */,
 				4E2C5AF91ACF2920007B9736 /* LaunchScreen.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4E2C5AFC1ACF2920007B9736 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,22 +157,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E2C5AFA1ACF2920007B9736 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4E2C5B001ACF2920007B9736 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4E2C5AE11ACF2920007B9736 /* HeaderWebView */;
-			targetProxy = 4E2C5AFF1ACF2920007B9736 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4E2C5AF21ACF2920007B9736 /* Main.storyboard */ = {
@@ -341,40 +277,6 @@
 			};
 			name = Release;
 		};
-		4E2C5B0C1ACF2920007B9736 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HeaderWebViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeaderWebView.app/HeaderWebView";
-			};
-			name = Debug;
-		};
-		4E2C5B0D1ACF2920007B9736 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HeaderWebViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeaderWebView.app/HeaderWebView";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,14 +294,6 @@
 			buildConfigurations = (
 				4E2C5B091ACF2920007B9736 /* Debug */,
 				4E2C5B0A1ACF2920007B9736 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		4E2C5B0B1ACF2920007B9736 /* Build configuration list for PBXNativeTarget "HeaderWebViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4E2C5B0C1ACF2920007B9736 /* Debug */,
-				4E2C5B0D1ACF2920007B9736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

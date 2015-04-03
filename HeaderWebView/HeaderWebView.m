@@ -33,7 +33,13 @@
     newFrame.origin.y = -CGRectGetMinY([self convertRect:self.innerHeaderView.frame toView:self.scrollView]);
     [self.headerView setFrame:newFrame];
     
-    [self.fullScreenDelegate headerWebView:self showFullScreen:(self.scrollView.contentOffset.y > 0)];
+    // Just once fullscreen on zoom scale !=1 
+    if (self.scrollView.zoomScale!=1) {
+        return;
+    }
+    
+    // Need some special logic on zooming when the frame increases
+    [self.fullScreenDelegate headerWebView:self showFullScreen:(newFrame.origin.y < 0)];
 }
 
 - (void)createHeaderView {
