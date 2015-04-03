@@ -32,7 +32,10 @@
 
 - (void)headerWebView:(HeaderWebView *)webview showFullScreen:(BOOL)fullScreen {
     
+    // Hide navigation bar
     [self.navigationController setNavigationBarHidden:fullScreen animated:YES];
+    
+    // Could hide also toolbar if apps has it
     
     // Hide the status bar too
     [[UIApplication sharedApplication] setStatusBarHidden:fullScreen withAnimation:UIStatusBarAnimationFade];
