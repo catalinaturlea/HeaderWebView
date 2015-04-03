@@ -22,13 +22,20 @@
     
     // Set the delegate for the full screen behavior
     [self.webView setFullScreenDelegate:self];
+    
+    // Test URL to load
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.postseek.com/meta/e85aef3ecaa2887f4c531f0940821c0f"]]];
 }
+
+#pragma mark -
+#pragma mark - HeaderWebViewDelegate
 
 - (void)headerWebView:(HeaderWebView *)webview showFullScreen:(BOOL)fullScreen {
     
     [self.navigationController setNavigationBarHidden:fullScreen animated:YES];
     
     // Hide the status bar too
+    [[UIApplication sharedApplication] setStatusBarHidden:fullScreen withAnimation:UIStatusBarAnimationFade];
 }
 
 @end

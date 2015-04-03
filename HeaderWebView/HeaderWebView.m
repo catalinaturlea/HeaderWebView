@@ -22,16 +22,13 @@
     
     [self createHeaderView];
     
-    [self loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.postseek.com/meta/e85aef3ecaa2887f4c531f0940821c0f"]]];
-    
     self.scalesPageToFit = YES;
     
     [self.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionInitial context:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    NSLog(@"%@", NSStringFromCGRect([self convertRect:self.innerHeaderView.frame toView:self.scrollView]));
-    
+
     CGRect newFrame = self.headerView.frame;
     newFrame.origin.y = -CGRectGetMinY([self convertRect:self.innerHeaderView.frame toView:self.scrollView]);
     [self.headerView setFrame:newFrame];
@@ -61,6 +58,7 @@
 }
 
 - (void)dealloc {
+    
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
