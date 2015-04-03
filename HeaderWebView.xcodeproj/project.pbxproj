@@ -15,6 +15,7 @@
 		4E2C5AF61ACF2920007B9736 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C5AF51ACF2920007B9736 /* Images.xcassets */; };
 		4E2C5AF91ACF2920007B9736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C5AF71ACF2920007B9736 /* LaunchScreen.xib */; };
 		4E2C5B051ACF2920007B9736 /* HeaderWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5B041ACF2920007B9736 /* HeaderWebViewTests.m */; };
+		4E2C5B101ACF294B007B9736 /* HeaderWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		4E2C5AFE1ACF2920007B9736 /* HeaderWebViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeaderWebViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2C5B031ACF2920007B9736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2C5B041ACF2920007B9736 /* HeaderWebViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderWebViewTests.m; sourceTree = "<group>"; };
+		4E2C5B0E1ACF294B007B9736 /* HeaderWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderWebView.h; sourceTree = "<group>"; };
+		4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				4E2C5AF71ACF2920007B9736 /* LaunchScreen.xib */,
 				4E2C5AEC1ACF2920007B9736 /* HeaderWebView.xcdatamodeld */,
 				4E2C5AE51ACF2920007B9736 /* Supporting Files */,
+				4E2C5B0E1ACF294B007B9736 /* HeaderWebView.h */,
+				4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */,
 			);
 			path = HeaderWebView;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				4E2C5AEB1ACF2920007B9736 /* AppDelegate.m in Sources */,
 				4E2C5AEE1ACF2920007B9736 /* HeaderWebView.xcdatamodeld in Sources */,
 				4E2C5AF11ACF2920007B9736 /* ViewController.m in Sources */,
+				4E2C5B101ACF294B007B9736 /* HeaderWebView.m in Sources */,
 				4E2C5AE81ACF2920007B9736 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
