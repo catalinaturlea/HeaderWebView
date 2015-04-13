@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00B689671ADBA76A006BFAA4 /* EmailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B689661ADBA76A006BFAA4 /* EmailView.m */; };
 		4E2C5AE81ACF2920007B9736 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AE71ACF2920007B9736 /* main.m */; };
 		4E2C5AEB1ACF2920007B9736 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AEA1ACF2920007B9736 /* AppDelegate.m */; };
 		4E2C5AF11ACF2920007B9736 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AF01ACF2920007B9736 /* ViewController.m */; };
 		4E2C5AF41ACF2920007B9736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C5AF21ACF2920007B9736 /* Main.storyboard */; };
 		4E2C5AF91ACF2920007B9736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E2C5AF71ACF2920007B9736 /* LaunchScreen.xib */; };
-		4E2C5B101ACF294B007B9736 /* HeaderWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00B689651ADBA76A006BFAA4 /* EmailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailView.h; sourceTree = "<group>"; };
+		00B689661ADBA76A006BFAA4 /* EmailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailView.m; sourceTree = "<group>"; };
 		4E2C5AE21ACF2920007B9736 /* HeaderWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeaderWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E2C5AE61ACF2920007B9736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E2C5AE71ACF2920007B9736 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -25,8 +27,6 @@
 		4E2C5AF01ACF2920007B9736 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4E2C5AF31ACF2920007B9736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4E2C5AF81ACF2920007B9736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4E2C5B0E1ACF294B007B9736 /* HeaderWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderWebView.h; sourceTree = "<group>"; };
-		4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderWebView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +63,8 @@
 				4E2C5AEA1ACF2920007B9736 /* AppDelegate.m */,
 				4E2C5AEF1ACF2920007B9736 /* ViewController.h */,
 				4E2C5AF01ACF2920007B9736 /* ViewController.m */,
-				4E2C5B0E1ACF294B007B9736 /* HeaderWebView.h */,
-				4E2C5B0F1ACF294B007B9736 /* HeaderWebView.m */,
+				00B689651ADBA76A006BFAA4 /* EmailView.h */,
+				00B689661ADBA76A006BFAA4 /* EmailView.m */,
 				4E2C5AF21ACF2920007B9736 /* Main.storyboard */,
 				4E2C5AF71ACF2920007B9736 /* LaunchScreen.xib */,
 				4E2C5AE51ACF2920007B9736 /* Supporting Files */,
@@ -152,7 +152,7 @@
 			files = (
 				4E2C5AEB1ACF2920007B9736 /* AppDelegate.m in Sources */,
 				4E2C5AF11ACF2920007B9736 /* ViewController.m in Sources */,
-				4E2C5B101ACF294B007B9736 /* HeaderWebView.m in Sources */,
+				00B689671ADBA76A006BFAA4 /* EmailView.m in Sources */,
 				4E2C5AE81ACF2920007B9736 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,6 +296,7 @@
 				4E2C5B0A1ACF2920007B9736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

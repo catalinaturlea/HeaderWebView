@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VWT-XD-9Ht">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="VWT-XD-9Ht">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -16,64 +16,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFe-Ap-c90" customClass="HeaderWebView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ut-jH-GkF" customClass="EmailView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="headerView" destination="Fam-Fa-kCn" id="uDP-x4-OI3"/>
-                                </connections>
-                            </webView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fam-Fa-kCn">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdu-Gc-Tpg">
-                                        <rect key="frame" x="16" y="16" width="45" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66R-Rh-ian">
-                                        <rect key="frame" x="16" y="53" width="28" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-gG-cVh">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="1"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rbk-8c-eCP">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </webView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fam-Fa-kCn">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdu-Gc-Tpg">
+                                                <rect key="frame" x="16" y="16" width="45" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66R-Rh-ian">
+                                                <rect key="frame" x="16" y="53" width="28" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1W-gG-cVh">
+                                                <rect key="frame" x="0.0" y="99" width="320" height="1"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="pcS-aD-cM8"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="pcS-aD-cM8"/>
+                                            <constraint firstItem="gdu-Gc-Tpg" firstAttribute="leading" secondItem="Fam-Fa-kCn" secondAttribute="leading" constant="16" id="2lm-au-mp4"/>
+                                            <constraint firstAttribute="bottom" secondItem="J1W-gG-cVh" secondAttribute="bottom" id="4h8-6a-bis"/>
+                                            <constraint firstAttribute="height" constant="100" id="ExO-tc-aFX"/>
+                                            <constraint firstItem="66R-Rh-ian" firstAttribute="top" secondItem="gdu-Gc-Tpg" secondAttribute="bottom" constant="16" id="UfI-ao-7Rj"/>
+                                            <constraint firstAttribute="trailing" secondItem="J1W-gG-cVh" secondAttribute="trailing" id="bRv-zn-iQ3"/>
+                                            <constraint firstItem="J1W-gG-cVh" firstAttribute="leading" secondItem="Fam-Fa-kCn" secondAttribute="leading" id="chH-hc-175"/>
+                                            <constraint firstItem="gdu-Gc-Tpg" firstAttribute="top" secondItem="Fam-Fa-kCn" secondAttribute="top" constant="16" id="ifU-FH-UHx"/>
+                                            <constraint firstItem="66R-Rh-ian" firstAttribute="leading" secondItem="Fam-Fa-kCn" secondAttribute="leading" constant="16" id="kqs-hk-SNp"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="gdu-Gc-Tpg" firstAttribute="leading" secondItem="Fam-Fa-kCn" secondAttribute="leading" constant="16" id="2lm-au-mp4"/>
-                                    <constraint firstAttribute="bottom" secondItem="J1W-gG-cVh" secondAttribute="bottom" id="4h8-6a-bis"/>
-                                    <constraint firstAttribute="height" constant="100" id="ExO-tc-aFX"/>
-                                    <constraint firstItem="66R-Rh-ian" firstAttribute="top" secondItem="gdu-Gc-Tpg" secondAttribute="bottom" constant="16" id="UfI-ao-7Rj"/>
-                                    <constraint firstAttribute="trailing" secondItem="J1W-gG-cVh" secondAttribute="trailing" id="bRv-zn-iQ3"/>
-                                    <constraint firstItem="J1W-gG-cVh" firstAttribute="leading" secondItem="Fam-Fa-kCn" secondAttribute="leading" id="chH-hc-175"/>
-                                    <constraint firstItem="gdu-Gc-Tpg" firstAttribute="top" secondItem="Fam-Fa-kCn" secondAttribute="top" constant="16" id="ifU-FH-UHx"/>
-                                    <constraint firstItem="66R-Rh-ian" firstAttribute="leading" secondItem="Fam-Fa-kCn" secondAttribute="leading" constant="16" id="kqs-hk-SNp"/>
+                                    <constraint firstAttribute="trailing" secondItem="rbk-8c-eCP" secondAttribute="trailing" id="L1h-ST-tEP"/>
+                                    <constraint firstItem="Fam-Fa-kCn" firstAttribute="top" secondItem="0Ut-jH-GkF" secondAttribute="top" id="Msg-92-Qe3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fam-Fa-kCn" secondAttribute="trailing" id="Y86-YT-yJS"/>
+                                    <constraint firstItem="Fam-Fa-kCn" firstAttribute="leading" secondItem="0Ut-jH-GkF" secondAttribute="leading" id="YJY-aK-Omw"/>
+                                    <constraint firstAttribute="bottom" secondItem="rbk-8c-eCP" secondAttribute="bottom" id="hNB-1m-Lh4"/>
+                                    <constraint firstItem="rbk-8c-eCP" firstAttribute="top" secondItem="0Ut-jH-GkF" secondAttribute="top" id="sge-KA-Sse"/>
+                                    <constraint firstItem="rbk-8c-eCP" firstAttribute="leading" secondItem="0Ut-jH-GkF" secondAttribute="leading" id="vn6-fg-fin"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="headerView" destination="Fam-Fa-kCn" id="l7i-Vf-Ev3"/>
+                                    <outlet property="webView" destination="rbk-8c-eCP" id="7LE-ZF-YTK"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gFe-Ap-c90" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="7Ab-yl-hHq"/>
-                            <constraint firstItem="gFe-Ap-c90" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9SO-Ge-xvk"/>
-                            <constraint firstAttribute="trailing" secondItem="gFe-Ap-c90" secondAttribute="trailing" id="AIk-it-7Gb"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gFe-Ap-c90" secondAttribute="bottom" id="PI3-s5-owM"/>
-                            <constraint firstItem="Fam-Fa-kCn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="awN-YW-lgM"/>
-                            <constraint firstItem="Fam-Fa-kCn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kWd-eY-t9w"/>
-                            <constraint firstAttribute="trailing" secondItem="Fam-Fa-kCn" secondAttribute="trailing" id="vzi-Ql-we3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Ut-jH-GkF" secondAttribute="bottom" id="3Fq-bL-s8S"/>
+                            <constraint firstItem="0Ut-jH-GkF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HBU-S2-zBG"/>
+                            <constraint firstItem="0Ut-jH-GkF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ccF-Lg-TLh"/>
+                            <constraint firstAttribute="trailing" secondItem="0Ut-jH-GkF" secondAttribute="trailing" id="y7I-j4-VIR"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="UI0-Cg-JKD"/>
                     <connections>
-                        <outlet property="webView" destination="gFe-Ap-c90" id="HEZ-aM-9to"/>
+                        <outlet property="emaiView" destination="0Ut-jH-GkF" id="uhS-53-X0C"/>
+                        <outlet property="normalWebView" destination="rbk-8c-eCP" id="oG4-zE-4xp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
