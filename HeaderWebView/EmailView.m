@@ -16,6 +16,8 @@
 
 @property (nonatomic, getter = isFullScreen) BOOL fullScreen;
 
+@property (nonatomic) CGFloat previousHeaderHeight;
+
 @end
 
 @implementation EmailView
@@ -76,5 +78,25 @@
 		[subview setFrame:newFrame];
 	}
 }
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    if (self.previousHeaderHeight == CGRectGetHeight(self.headerView.frame)) {
+        return;
+    }
+    for (UIView *subview in self.webView.scrollView.subviews) {
+        CGRect newFrame = subview.frame;
+        if ([subview isEqual:self.innerHeaderView]) {
+            continue;
+        }
+        
+        newFrame.origin.y = CGRectGetHeight(self.headerView.frame);
+        [subview setFrame:newFrame];
+    }
+    
+    [self setPreviousHeaderHeight:CGRectGetHeight(self.headerView.frame)];
+}
+
 
 @end
