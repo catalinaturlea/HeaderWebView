@@ -69,16 +69,6 @@
     [self setInnerHeaderView:headerView];
     
     [self addSubview:self.headerView];
-    
-    for (UIView *subview in self.webView.scrollView.subviews) {
-        CGRect newFrame = subview.frame;
-        if ([subview isEqual:self.innerHeaderView]) {
-            continue;
-        }
-        
-        newFrame.origin.y += CGRectGetHeight(self.headerView.frame);
-        [subview setFrame:newFrame];
-    }
 }
 
 - (void)layoutSubviews {
