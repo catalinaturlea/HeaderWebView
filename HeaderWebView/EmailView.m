@@ -32,6 +32,8 @@
     [self.webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionInitial context:nil];
     
     [self.webView.scrollView setDelegate:self];
+    
+    [self.webView.scrollView setShowsVerticalScrollIndicator:NO];
 }
 
 #pragma mark -
