@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001019331AE7CFE500C8C006 /* TouchesForwardingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 001019321AE7CFE500C8C006 /* TouchesForwardingView.m */; };
 		00B689671ADBA76A006BFAA4 /* EmailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00B689661ADBA76A006BFAA4 /* EmailView.m */; };
 		4E2C5AE81ACF2920007B9736 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AE71ACF2920007B9736 /* main.m */; };
 		4E2C5AEB1ACF2920007B9736 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2C5AEA1ACF2920007B9736 /* AppDelegate.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001019311AE7CFE500C8C006 /* TouchesForwardingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchesForwardingView.h; sourceTree = "<group>"; };
+		001019321AE7CFE500C8C006 /* TouchesForwardingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchesForwardingView.m; sourceTree = "<group>"; };
 		00B689651ADBA76A006BFAA4 /* EmailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailView.h; sourceTree = "<group>"; };
 		00B689661ADBA76A006BFAA4 /* EmailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailView.m; sourceTree = "<group>"; };
 		4E2C5AE21ACF2920007B9736 /* HeaderWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeaderWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +68,8 @@
 				4E2C5AF01ACF2920007B9736 /* ViewController.m */,
 				00B689651ADBA76A006BFAA4 /* EmailView.h */,
 				00B689661ADBA76A006BFAA4 /* EmailView.m */,
+				001019311AE7CFE500C8C006 /* TouchesForwardingView.h */,
+				001019321AE7CFE500C8C006 /* TouchesForwardingView.m */,
 				4E2C5AF21ACF2920007B9736 /* Main.storyboard */,
 				4E2C5AF71ACF2920007B9736 /* LaunchScreen.xib */,
 				4E2C5AE51ACF2920007B9736 /* Supporting Files */,
@@ -151,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E2C5AEB1ACF2920007B9736 /* AppDelegate.m in Sources */,
+				001019331AE7CFE500C8C006 /* TouchesForwardingView.m in Sources */,
 				4E2C5AF11ACF2920007B9736 /* ViewController.m in Sources */,
 				00B689671ADBA76A006BFAA4 /* EmailView.m in Sources */,
 				4E2C5AE81ACF2920007B9736 /* main.m in Sources */,

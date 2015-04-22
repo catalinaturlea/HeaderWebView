@@ -8,13 +8,15 @@
 
 #import "EmailView.h"
 
-@interface EmailView () <UIScrollViewDelegate>
+@interface EmailView () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) UIView *innerHeaderView;
 @property (nonatomic, weak) IBOutlet UIView *headerView;
 @property (nonatomic, weak) IBOutlet UIWebView *webView;
 
 @property (nonatomic, getter = isFullScreen) BOOL fullScreen;
+@property (nonatomic, getter = isZooming) BOOL zooming;
+@property (nonatomic, getter = didSwitchToFullScreen) BOOL switchToFullScreen;
 
 @property (nonatomic) CGFloat previousHeaderHeight;
 
@@ -34,18 +36,31 @@
     [self.webView.scrollView setDelegate:self];
     
     [self.webView.scrollView setShowsVerticalScrollIndicator:NO];
+    
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTapOnView:)];
+    [gesture setDelegate:self];
+    [gesture setNumberOfTapsRequired:2];
+    [self.webView.scrollView addGestureRecognizer:gesture];
 }
+
 
 #pragma mark -
 #pragma mark - NSKeyObserving
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
     // Update the frame of the header view so that it scrolls with the webview content
     CGRect newFrame = self.headerView.frame;
-    newFrame.origin.y = -CGRectGetMinY([self convertRect:self.innerHeaderView.frame toView:self.webView.scrollView]);
+    newFrame.origin.y = -CGRectGetMinY([self.webView convertRect:self.innerHeaderView.frame toView:self.webView.scrollView]);
     [self.headerView setFrame:newFrame];
     
-    BOOL fullScreen = (newFrame.origin.y < 0) || [self isFullScreen];
+    BOOL fullScreen = (newFrame.origin.y < -10);
+    if (([self isZooming] && [self didSwitchToFullScreen]) || (fullScreen == [self isFullScreen])) {
+        return;
+    }
+    
+    [self setSwitchToFullScreen:fullScreen];
+    [self setFullScreen:fullScreen];
     
     // Call the delegate for the full screen
     [self.fullScreenDelegate emailView:self showFullScreen:fullScreen];
@@ -54,9 +69,26 @@
 #pragma mark -
 #pragma mark - UIScrollViewDelegate
 
-- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-    // This is used to avoid weird behaviour when frame changes on full screen
-    [self setFullScreen:(scrollView.zoomScale >= 1)];
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
+{
+    [self setZooming:NO];
+    [self setSwitchToFullScreen:(scale > 1)];
+}
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
+{
+    [self setSwitchToFullScreen:NO];
+    [self setZooming:YES];
+}
+
+- (IBAction)didDoubleTapOnView:(UITapGestureRecognizer *)sender {
+    [self setFullScreen:![self isFullScreen]];
+    [self setSwitchToFullScreen:[self isFullScreen]];
+    [self.fullScreenDelegate emailView:self showFullScreen:[self isFullScreen]];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
 
 #pragma mark -
@@ -64,11 +96,13 @@
 
 - (void)createHeaderView {
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 60)];
+    [headerView setBackgroundColor:[UIColor clearColor]];
     
     [self.webView.scrollView addSubview:headerView];
     [self setInnerHeaderView:headerView];
     
-    [self addSubview:self.headerView];
+    [self.webView addSubview:self.headerView];
+    [self.webView insertSubview:self.headerView aboveSubview:self.webView.scrollView];
 }
 
 - (void)layoutSubviews {
