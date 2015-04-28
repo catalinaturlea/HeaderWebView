@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EDE06193-AE45-4042-8273-795B8E573765</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>HeaderWebView</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>96151809B3C0D720127659DF5C75F31F7316796D</key>
 		<string>https://github.com/catalinaturlea/HeaderWebView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HeaderWebView.xcodeproj/project.xcworkspace</string>
+	<string>HeaderWebView.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>96151809B3C0D720127659DF5C75F31F7316796D</key>

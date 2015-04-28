@@ -13,6 +13,7 @@
 // Need to forward touches to the webview from the overscrolling to work
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
     UIView * hitTestView = [super hitTest:point withEvent:event];
+    
     if ([hitTestView isKindOfClass:[UIControl class]]) {
         return hitTestView;
     }

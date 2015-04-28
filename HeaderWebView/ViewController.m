@@ -12,7 +12,7 @@
 @interface ViewController () <EmailViewDelegate>
 
 @property (nonatomic, weak) IBOutlet EmailView *emaiView;
-@property (weak, nonatomic) IBOutlet UIWebView *normalWebView;
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
 
 @end
 
@@ -22,7 +22,7 @@
 	[super viewDidLoad];
 
 	// Test URL to load
-	[self.normalWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://nshipster.com/ns_enum-ns_options/"]]];
+	[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://nshipster.com/ns_enum-ns_options/"]]];
 
 	[self.emaiView setFullScreenDelegate:self];
 }
