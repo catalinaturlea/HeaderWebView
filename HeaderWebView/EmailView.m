@@ -24,7 +24,8 @@
 
 @implementation EmailView
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     
     [self createHeaderView];
@@ -34,15 +35,12 @@
     [self.webView.scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionInitial context:nil];
     
     [self.webView.scrollView setDelegate:self];
-    
     [self.webView.scrollView setShowsVerticalScrollIndicator:NO];
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didDoubleTapOnView:)];
     [gesture setDelegate:self];
-    [gesture setNumberOfTapsRequired:2];
     [self.webView.scrollView addGestureRecognizer:gesture];
 }
-
 
 #pragma mark -
 #pragma mark - NSKeyObserving
@@ -55,7 +53,8 @@
     [self.headerView setFrame:newFrame];
     
     BOOL fullScreen = (newFrame.origin.y < -10);
-    if (([self isZooming] && [self didSwitchToFullScreen]) || (fullScreen == [self isFullScreen])) {
+    if (([self isZooming] && [self didSwitchToFullScreen]) || (fullScreen == [self isFullScreen]))
+    {
         return;
     }
     
@@ -81,20 +80,23 @@
     [self setZooming:YES];
 }
 
-- (IBAction)didDoubleTapOnView:(UITapGestureRecognizer *)sender {
+- (IBAction)didDoubleTapOnView:(UITapGestureRecognizer *)sender
+{
     [self setFullScreen:![self isFullScreen]];
     [self setSwitchToFullScreen:[self isFullScreen]];
     [self.fullScreenDelegate emailView:self showFullScreen:[self isFullScreen]];
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
     return YES;
 }
 
 #pragma mark -
 #pragma mark - Custom methods
 
-- (void)createHeaderView {
+- (void)createHeaderView
+{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), 60)];
     [headerView setBackgroundColor:[UIColor clearColor]];
     
@@ -102,18 +104,21 @@
     [self setInnerHeaderView:headerView];
     
     [self.webView addSubview:self.headerView];
-    [self.webView insertSubview:self.headerView aboveSubview:self.webView.scrollView];
 }
 
-- (void)layoutSubviews {
+- (void)layoutSubviews
+{
     [super layoutSubviews];
     
-    if (self.previousHeaderHeight == CGRectGetHeight(self.headerView.frame)) {
+    if (self.previousHeaderHeight == CGRectGetHeight(self.headerView.frame))
+    {
         return;
     }
-    for (UIView *subview in self.webView.scrollView.subviews) {
+    for (UIView *subview in self.webView.scrollView.subviews)
+    {
         CGRect newFrame = subview.frame;
-        if ([subview isEqual:self.innerHeaderView]) {
+        if ([subview isEqual:self.innerHeaderView])
+        {
             continue;
         }
         
@@ -124,9 +129,9 @@
     [self setPreviousHeaderHeight:CGRectGetHeight(self.headerView.frame)];
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [self.webView.scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
-
 
 @end
