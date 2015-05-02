@@ -17,8 +17,7 @@
 @property (nonatomic, getter = isFullScreen) BOOL fullScreen;
 @property (nonatomic, getter = isZooming) BOOL zooming;
 @property (nonatomic, getter = didSwitchToFullScreen) BOOL switchToFullScreen;
-
-@property (nonatomic) CGFloat previousHeaderHeight;
+@property (nonatomic, getter = didTapToFullScreen) BOOL tapToFullScreen;
 
 @end
 
@@ -52,7 +51,13 @@
     newFrame.origin.y = -CGRectGetMinY([self.webView convertRect:self.innerHeaderView.frame toView:self.webView.scrollView]);
     [self.headerView setFrame:newFrame];
     
-    BOOL fullScreen = (newFrame.origin.y < -10);
+    if ([self  didTapToFullScreen])
+    {
+        // The delegate was already called in this case, in the tap gesture callback method
+        return;
+    }
+    
+    BOOL fullScreen = (newFrame.origin.y < 0);
     if (([self isZooming] && [self didSwitchToFullScreen]) || (fullScreen == [self isFullScreen]))
     {
         return;
@@ -78,14 +83,27 @@
 {
     [self setSwitchToFullScreen:NO];
     [self setZooming:YES];
+    [self setTapToFullScreen:NO];
 }
 
-- (IBAction)didDoubleTapOnView:(UITapGestureRecognizer *)sender
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self setTapToFullScreen:NO];
+}
+
+#pragma mark -
+#pragma mark - UITapGestureRecognizer callback
+
+- (void)didDoubleTapOnView:(UITapGestureRecognizer *)sender
 {
     [self setFullScreen:![self isFullScreen]];
     [self setSwitchToFullScreen:[self isFullScreen]];
+    [self setTapToFullScreen:YES];
     [self.fullScreenDelegate emailView:self showFullScreen:[self isFullScreen]];
 }
+
+#pragma mark -
+#pragma mark - UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
@@ -103,17 +121,16 @@
     [self.webView.scrollView addSubview:headerView];
     [self setInnerHeaderView:headerView];
     
-    [self.webView addSubview:self.headerView];
+    [self addSubview:self.headerView];
 }
+
+#pragma mark -
+#pragma mark - Custom layouting
 
 - (void)layoutSubviews
 {
     [super layoutSubviews];
     
-    if (self.previousHeaderHeight == CGRectGetHeight(self.headerView.frame))
-    {
-        return;
-    }
     for (UIView *subview in self.webView.scrollView.subviews)
     {
         CGRect newFrame = subview.frame;
@@ -125,9 +142,10 @@
         newFrame.origin.y = CGRectGetHeight(self.headerView.frame);
         [subview setFrame:newFrame];
     }
-    
-    [self setPreviousHeaderHeight:CGRectGetHeight(self.headerView.frame)];
 }
+
+#pragma mark -
+#pragma mark - Dealloc
 
 - (void)dealloc
 {
