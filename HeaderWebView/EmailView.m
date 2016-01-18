@@ -42,9 +42,9 @@
 }
 
 #pragma mark -
-#pragma mark - NSKeyObserving
+#pragma mark - Interface layout
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)updateLayout
 {
     // Update the frame of the header view so that it scrolls with the webview content
     CGRect newFrame = self.headerView.frame;
@@ -68,6 +68,14 @@
     
     // Call the delegate for the full screen
     [self.fullScreenDelegate emailView:self showFullScreen:fullScreen];
+}
+
+#pragma mark -
+#pragma mark - NSKeyObserving
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    [self updateLayout];
 }
 
 #pragma mark -
@@ -142,6 +150,8 @@
         newFrame.origin.y = CGRectGetHeight(self.headerView.frame);
         [subview setFrame:newFrame];
     }
+    
+    [self updateLayout];
 }
 
 #pragma mark -
